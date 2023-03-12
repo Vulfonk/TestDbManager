@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace TestDbManager
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var db = new UserContext())
+            {
+                db.Objects.Add(new Subject() { Name = "dima"});
+                db.SaveChanges();
+            }
+
         }
     }
 }

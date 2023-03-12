@@ -35,15 +35,30 @@ namespace TestDbManager
                     Type = "Документ"
                 };
 
+                var child2 = new Subject()
+                {
+                    Product = "Диздок диздока",
+                    Type = "Документ"
+                };
+
                 var link = new Link()
                 {
                     Parent = subj,
                     Child = child,
                 };
 
+                var link2 = new Link()
+                {
+                    Parent = child,
+                    Child = child2,
+                };
+
                 db.Objects.Add(subj);
                 db.Objects.Add(child);
+                db.Objects.Add(child2);
+
                 db.Links.Add(link);
+                db.Links.Add(link2);
 
                 db.SaveChanges();
             }
@@ -55,7 +70,7 @@ namespace TestDbManager
             {
                 treeView1.Nodes.Clear();
                 var listObjects = db.Objects.ToList();
-                List<SubjectView> nodeList = listObjects.Select(x => GenerateTreeNode(x)).ToList();
+                List<TreeNode> nodeList = listObjects.Select(x => GenerateTreeNode(x)).ToList();
 
                 foreach (var link in db.Links)
                 {
@@ -63,25 +78,26 @@ namespace TestDbManager
                 }
 
                 var roots = nodeList.Where(x => x.Parent == null);
-                this.treeView1.Nodes.AddRange(nodeList.ToArray());
+
+
+                this.treeView1.Nodes.AddRange(roots.ToArray());
             }
         }
 
-        private void AddLink(List<SubjectView> subjects, Link link)
+        private void AddLink(List<TreeNode> nodes, Link link)
         {
             var parent = link.Parent;
             var child = link.Child;
-            var parentSubject = subjects.FirstOrDefault(x => x.Subject == parent);
-            var childSubject = subjects.FirstOrDefault(x => x.Subject == child);
-            parentSubject.Childs.Add(parent);
-            childSubject.Parent = parent;
+
+            var parentNode = nodes.FirstOrDefault(x => x.Tag == parent);
+            var childNode = nodes.FirstOrDefault(x => x.Tag == child);
+
+            parentNode.Nodes.Add(childNode);
         }
 
-        private SubjectView GenerateTreeNode(Subject subject)
+        private TreeNode GenerateTreeNode(Subject subject)
         {
-
-            return new SubjectView() { Subject = subject};
+            return new TreeNode() { Tag = subject, Text = subject.Product};
         }
-
     }
 }

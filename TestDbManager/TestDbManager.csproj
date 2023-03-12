@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202303121524129_NULL.designer.cs">
       <DependentUpon>202303121524129_NULL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303121605062_m2.cs" />
+    <Compile Include="Migrations\202303121605062_m2.designer.cs">
+      <DependentUpon>202303121605062_m2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303121607482_AttributeTableMigraton.cs" />
+    <Compile Include="Migrations\202303121607482_AttributeTableMigraton.designer.cs">
+      <DependentUpon>202303121607482_AttributeTableMigraton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303121524129_NULL.resx">
       <DependentUpon>202303121524129_NULL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303121605062_m2.resx">
+      <DependentUpon>202303121605062_m2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303121607482_AttributeTableMigraton.resx">
+      <DependentUpon>202303121607482_AttributeTableMigraton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

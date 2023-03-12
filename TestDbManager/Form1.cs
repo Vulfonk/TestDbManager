@@ -22,10 +22,14 @@ namespace TestDbManager
         {
             using (var db = new UserContext())
             {
-                db.Objects.Add(new Subject() { Name = "dima"});
+                var subj = new Subject()
+                {
+                    Product = "СЕ.1235.00.00.000",
+                    Type = "Сборочная единица"
+                };
+                db.Objects.Add(subj);
                 db.SaveChanges();
             }
-
         }
     }
 }

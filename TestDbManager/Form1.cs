@@ -21,6 +21,7 @@ namespace TestDbManager
 
         private void button1_Click(object sender, EventArgs e)
         {
+            TestData.FillTestData();
            
         }
 
@@ -83,6 +84,11 @@ namespace TestDbManager
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.RowHeadersVisible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TestData.ClearDataBase();
         }
     }
 }

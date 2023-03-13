@@ -9,11 +9,11 @@ namespace DataBase.DTO
         [Key]
         public int Id { get; set; }
 
+        [Column("objectid")]
+        public int? ObjectId { get; set; }
+        
         [ForeignKey("ObjectId")]
         public Subject Object { get; set; }
-
-        [Column("objectid")]
-        public int ObjectId { get; set; }
 
         [Column("name")]
         [StringLength(50)]

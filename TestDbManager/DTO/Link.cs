@@ -20,5 +20,9 @@ namespace DataBase.DTO
 
         [ForeignKey("ParentId")]
         public Subject Parent { get; set; }
+
+        [Column("type")]
+        [StringLength(50)]
+        public string Type { get; set; }
     }
 }

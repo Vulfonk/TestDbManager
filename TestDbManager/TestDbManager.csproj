@@ -84,10 +84,15 @@
     <Compile Include="Migrations\202303121607482_AttributeTableMigraton.designer.cs">
       <DependentUpon>202303121607482_AttributeTableMigraton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303131548154_CharCounts.cs" />
+    <Compile Include="Migrations\202303131548154_CharCounts.designer.cs">
+      <DependentUpon>202303131548154_CharCounts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO\Subject.cs" />
+    <Compile Include="TestData.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303121607482_AttributeTableMigraton.resx">
       <DependentUpon>202303121607482_AttributeTableMigraton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303131548154_CharCounts.resx">
+      <DependentUpon>202303131548154_CharCounts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

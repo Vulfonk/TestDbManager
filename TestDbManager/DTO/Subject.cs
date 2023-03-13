@@ -10,9 +10,11 @@ namespace DataBase.DTO
         public int Id { get; set; }
 
         [Column("product")]
+        [StringLength(150)]
         public string Product { get; set; }
 
         [Column("type")]
+        [StringLength(50)]
         public string Type { get; set; }
 
     }

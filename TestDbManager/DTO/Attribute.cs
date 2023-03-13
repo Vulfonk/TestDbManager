@@ -16,9 +16,11 @@ namespace DataBase.DTO
         public int ObjectId { get; set; }
 
         [Column("name")]
+        [StringLength(50)]
         public string Name { get; set; }
 
         [Column("Value")]
+        [StringLength(150)]
         public string Value{ get; set; }
     }
 }

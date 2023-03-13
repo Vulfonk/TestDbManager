@@ -21,47 +21,7 @@ namespace TestDbManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var db = new UserContext())
-            {
-                var subj = new Subject()
-                {
-                    Product = "СЕ.1235.00.00.000",
-                    Type = "Сборочная единица"
-                };
-
-                var child = new Subject()
-                {
-                    Product = "Диздок",
-                    Type = "Документ"
-                };
-
-                var child2 = new Subject()
-                {
-                    Product = "Диздок диздока",
-                    Type = "Документ"
-                };
-
-                var link = new Link()
-                {
-                    Parent = subj,
-                    Child = child,
-                };
-
-                var link2 = new Link()
-                {
-                    Parent = child,
-                    Child = child2,
-                };
-
-                db.Objects.Add(subj);
-                db.Objects.Add(child);
-                db.Objects.Add(child2);
-
-                db.Links.Add(link);
-                db.Links.Add(link2);
-
-                db.SaveChanges();
-            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,6 +44,11 @@ namespace TestDbManager
             }
         }
 
+        /// <summary>
+        /// Добавить соединение
+        /// </summary>
+        /// <param name="nodes">Ноды</param>
+        /// <param name="link">Слединение</param>
         private void AddLink(List<TreeNode> nodes, Link link)
         {
             var parent = link.Parent;
@@ -98,6 +63,26 @@ namespace TestDbManager
         private TreeNode GenerateTreeNode(Subject subject)
         {
             return new TreeNode() { Tag = subject, Text = subject.Product};
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var node = e.Node;
+            using (var db = new UserContext())
+            {
+                dataGridView1.Rows.Clear();
+                Subject subject = node.Tag as Subject;
+                var attributes = db.Attributes.Where(x => x.ObjectId== subject.Id);
+                foreach(var attr in attributes)
+                {
+                    dataGridView1.Rows.Add(attr.Name, attr.Value);
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dataGridView1.RowHeadersVisible = false;
         }
     }
 }

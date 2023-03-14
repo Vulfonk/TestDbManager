@@ -126,34 +126,7 @@ namespace TestDbManager
 
         private void DeleteNode(TreeNode node)
         {
-            using (var db = new UserContext())
-            {
-                DeleteNode(node, db);
-            }
-
-        }
-
-        private void DeleteNode(TreeNode node, UserContext db)
-        {
-            if (node.Tag is Subject subject)
-            {
-                var nodes = node.Nodes;
-                foreach (var nd in nodes.OfType<TreeNode>())
-                {
-                    DeleteNode(nd, db);
-                }
-                var link = db.Links.FirstOrDefault(x => x.ChildId == subject.Id);
-                if (link != null)
-                {
-                    db.Links.Remove(link);
-                    db.SaveChanges();
-                }
-
-                db.Objects.Attach(subject);
-                db.Entry(subject).State = EntityState.Deleted;
-                db.Objects.Remove(subject);
-                db.SaveChanges();
-            }
+            new DataBaseService().DeleteObject(node.Tag as Subject);
         }
     }
 }

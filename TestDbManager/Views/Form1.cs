@@ -89,5 +89,10 @@ namespace TestDbManager
         {
             TestData.ClearDataBase();
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            //treeView1.SelectedNode.Nodes.Add()
+        }
     }
 }

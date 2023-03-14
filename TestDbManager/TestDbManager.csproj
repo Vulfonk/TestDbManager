@@ -61,10 +61,16 @@
   <ItemGroup>
     <Compile Include="DTO\Attribute.cs" />
     <Compile Include="DataContext.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Views\AddDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Views\AddDialog.Designer.cs">
+      <DependentUpon>AddDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Link.cs" />
@@ -93,11 +99,11 @@
       <DependentUpon>202303132247473_FK_AttributeMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ProfileApp\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO\Subject.cs" />
     <Compile Include="TestData.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303121440276_InitialCreate.resx">
@@ -127,7 +133,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
+    <None Include="ProfileApp\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,7 +145,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="ProfileApp\App.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

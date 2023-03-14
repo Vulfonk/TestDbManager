@@ -53,9 +53,9 @@ namespace TestDbManager
                 new Subject{ Id=110, Product="СЕ.1235.01.00.001", Type="Сборочная единица"},
                 new Subject{ Id=111, Product="СЕ.1235.02.00.001", Type="Деталь"},
                 new Subject{ Id=112, Product="СЕ.1235.00.00.001", Type="Сборочная единица"},
-                new Subject{ Id=113, Product="09Г2С", Type="Материал по КД Сталь"},
+                new Subject{ Id=113, Product="Сталь 09Г2С", Type="Материал по КД"},
                 new Subject{ Id=114, Product="СЕ.1005.00.00.000", Type="Сборочная единица"},
-                new Subject{ Id=115, Product="39В2С", Type="Материал по КД Сталь"},
+                new Subject{ Id=115, Product="Канат стальной", Type="Материал по КД"},
                 new Subject{ Id=116, Product="СЕ.1235.01.01.000 ВП", Type="Документ СЕ.1235.01.01.000"},
             };
 
@@ -80,7 +80,7 @@ namespace TestDbManager
             var attributes = new List<DataBase.DTO.Attribute>()
             {
                 new DataBase.DTO.Attribute { ObjectId = 103, Name = "Наименование", Value = "Фланец" },
-                new DataBase.DTO.Attribute { ObjectId = 103, Name = "Раздел спецификации Сборочные", Value = "единицы" },
+                new DataBase.DTO.Attribute { ObjectId = 103, Name = "Раздел спецификации", Value = "Сборочные единицы" },
                 new DataBase.DTO.Attribute { ObjectId = 114, Name = "Наименование", Value = "Колпак" },
                 new DataBase.DTO.Attribute { ObjectId = 115, Name = "Марка материала Сталь", Value = "09Г2С" },
             };

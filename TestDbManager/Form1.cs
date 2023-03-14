@@ -19,13 +19,12 @@ namespace TestDbManager
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonFillDb_Click(object sender, EventArgs e)
         {
             TestData.FillTestData();
-           
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonShowDb_Click(object sender, EventArgs e)
         {
             using (var db = new UserContext())
             {
@@ -86,7 +85,7 @@ namespace TestDbManager
             dataGridView1.RowHeadersVisible = false;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonClearDb_Click(object sender, EventArgs e)
         {
             TestData.ClearDataBase();
         }

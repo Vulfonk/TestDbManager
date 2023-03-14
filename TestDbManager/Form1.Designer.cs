@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonFillDb = new System.Windows.Forms.Button();
+            this.buttonShowDb = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonClearDb = new System.Windows.Forms.Button();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,73 +44,95 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(317, 426);
+            this.treeView1.Size = new System.Drawing.Size(317, 435);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
-            // button1
+            // buttonFillDb
             // 
-            this.button1.Location = new System.Drawing.Point(346, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonFillDb.Location = new System.Drawing.Point(335, 12);
+            this.buttonFillDb.Name = "buttonFillDb";
+            this.buttonFillDb.Size = new System.Drawing.Size(75, 23);
+            this.buttonFillDb.TabIndex = 1;
+            this.buttonFillDb.Text = "Заполнить";
+            this.buttonFillDb.UseVisualStyleBackColor = true;
+            this.buttonFillDb.Click += new System.EventHandler(this.buttonFillDb_Click);
             // 
-            // button2
+            // buttonShowDb
             // 
-            this.button2.Location = new System.Drawing.Point(346, 42);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonShowDb.Location = new System.Drawing.Point(335, 41);
+            this.buttonShowDb.Name = "buttonShowDb";
+            this.buttonShowDb.Size = new System.Drawing.Size(75, 23);
+            this.buttonShowDb.TabIndex = 2;
+            this.buttonShowDb.Text = "Показать";
+            this.buttonShowDb.UseVisualStyleBackColor = true;
+            this.buttonShowDb.Click += new System.EventHandler(this.buttonShowDb_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameColumn,
             this.ValueColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(546, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(613, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(242, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(305, 435);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // buttonClearDb
+            // 
+            this.buttonClearDb.Location = new System.Drawing.Point(335, 70);
+            this.buttonClearDb.Name = "buttonClearDb";
+            this.buttonClearDb.Size = new System.Drawing.Size(75, 23);
+            this.buttonClearDb.TabIndex = 4;
+            this.buttonClearDb.Text = "Очистить";
+            this.buttonClearDb.UseVisualStyleBackColor = true;
+            this.buttonClearDb.Click += new System.EventHandler(this.buttonClearDb_Click);
             // 
             // NameColumn
             // 
             this.NameColumn.HeaderText = "Название";
             this.NameColumn.Name = "NameColumn";
-            this.NameColumn.Width = 120;
+            this.NameColumn.Width = 130;
             // 
             // ValueColumn
             // 
             this.ValueColumn.HeaderText = "Значение";
             this.ValueColumn.Name = "ValueColumn";
+            this.ValueColumn.Width = 130;
             // 
-            // button3
+            // buttonDelete
             // 
-            this.button3.Location = new System.Drawing.Point(346, 71);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonDelete.Location = new System.Drawing.Point(335, 99);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 5;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(335, 129);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(930, 459);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonClearDb);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonShowDb);
+            this.Controls.Add(this.buttonFillDb);
             this.Controls.Add(this.treeView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -121,12 +145,14 @@
         #endregion
 
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonFillDb;
+        private System.Windows.Forms.Button buttonShowDb;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonClearDb;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValueColumn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
 

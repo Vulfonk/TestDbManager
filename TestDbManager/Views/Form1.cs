@@ -121,7 +121,7 @@ namespace TestDbManager
                 }
             }
             DeleteNode(selectedNode);
-            UpdateTreeView();
+            treeView1.Nodes.Remove(selectedNode);
         }
 
         private void DeleteNode(TreeNode node)

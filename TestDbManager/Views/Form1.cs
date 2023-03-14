@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +19,8 @@ namespace TestDbManager
         public Form1()
         {
             InitializeComponent();
+            Database.SetInitializer(
+        new DropCreateDatabaseIfModelChanges<UserContext>());
         }
 
         private void buttonFillDb_Click(object sender, EventArgs e)
@@ -25,6 +29,11 @@ namespace TestDbManager
         }
 
         private void buttonShowDb_Click(object sender, EventArgs e)
+        {
+            UpdateTreeView();
+        }
+
+        private void UpdateTreeView()
         {
             using (var db = new UserContext())
             {
@@ -62,7 +71,7 @@ namespace TestDbManager
 
         private TreeNode GenerateTreeNode(Subject subject)
         {
-            return new TreeNode() { Tag = subject, Text = subject.Product};
+            return new TreeNode() { Tag = subject, Text = subject.Product };
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -72,8 +81,8 @@ namespace TestDbManager
             {
                 dataGridView1.Rows.Clear();
                 Subject subject = node.Tag as Subject;
-                var attributes = db.Attributes.Where(x => x.ObjectId== subject.Id);
-                foreach(var attr in attributes)
+                var attributes = db.Attributes.Where(x => x.ObjectId == subject.Id);
+                foreach (var attr in attributes)
                 {
                     dataGridView1.Rows.Add(attr.Name, attr.Value);
                 }
@@ -93,6 +102,58 @@ namespace TestDbManager
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             //treeView1.SelectedNode.Nodes.Add()
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var selectedNode = treeView1.SelectedNode;
+            if (selectedNode == null)
+            {
+                return;
+            }
+            if (selectedNode.Nodes?.Count > 0)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                var result = MessageBox.Show("Удалить дочерние элементы?", "", buttons);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            DeleteNode(selectedNode);
+            UpdateTreeView();
+        }
+
+        private void DeleteNode(TreeNode node)
+        {
+            using (var db = new UserContext())
+            {
+                DeleteNode(node, db);
+            }
+
+        }
+
+        private void DeleteNode(TreeNode node, UserContext db)
+        {
+            if (node.Tag is Subject subject)
+            {
+                var nodes = node.Nodes;
+                foreach (var nd in nodes.OfType<TreeNode>())
+                {
+                    DeleteNode(nd, db);
+                }
+                var link = db.Links.FirstOrDefault(x => x.ChildId == subject.Id);
+                if (link != null)
+                {
+                    db.Links.Remove(link);
+                    db.SaveChanges();
+                }
+
+                db.Objects.Attach(subject);
+                db.Entry(subject).State = EntityState.Deleted;
+                db.Objects.Remove(subject);
+                db.SaveChanges();
+            }
         }
     }
 }

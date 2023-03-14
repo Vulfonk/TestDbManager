@@ -10,7 +10,7 @@ namespace DataBase.DTO
         public int Id { get; set; }
 
         [Column("objectid")]
-        public int? ObjectId { get; set; }
+        public int ObjectId { get; set; }
         
         [ForeignKey("ObjectId")]
         public Subject Object { get; set; }

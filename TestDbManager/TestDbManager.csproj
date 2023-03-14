@@ -74,55 +74,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Link.cs" />
-    <Compile Include="Migrations\202303121440276_InitialCreate.cs" />
-    <Compile Include="Migrations\202303121440276_InitialCreate.designer.cs">
-      <DependentUpon>202303121440276_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202303121524129_NULL.cs" />
-    <Compile Include="Migrations\202303121524129_NULL.designer.cs">
-      <DependentUpon>202303121524129_NULL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202303121605062_m2.cs" />
-    <Compile Include="Migrations\202303121605062_m2.designer.cs">
-      <DependentUpon>202303121605062_m2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202303121607482_AttributeTableMigraton.cs" />
-    <Compile Include="Migrations\202303121607482_AttributeTableMigraton.designer.cs">
-      <DependentUpon>202303121607482_AttributeTableMigraton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202303131548154_CharCounts.cs" />
-    <Compile Include="Migrations\202303131548154_CharCounts.designer.cs">
-      <DependentUpon>202303131548154_CharCounts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202303132247473_FK_AttributeMigration.cs" />
-    <Compile Include="Migrations\202303132247473_FK_AttributeMigration.designer.cs">
-      <DependentUpon>202303132247473_FK_AttributeMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProfileApp\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO\Subject.cs" />
     <Compile Include="TestData.cs" />
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303121440276_InitialCreate.resx">
-      <DependentUpon>202303121440276_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303121524129_NULL.resx">
-      <DependentUpon>202303121524129_NULL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303121605062_m2.resx">
-      <DependentUpon>202303121605062_m2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303121607482_AttributeTableMigraton.resx">
-      <DependentUpon>202303121607482_AttributeTableMigraton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303131548154_CharCounts.resx">
-      <DependentUpon>202303131548154_CharCounts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303132247473_FK_AttributeMigration.resx">
-      <DependentUpon>202303132247473_FK_AttributeMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

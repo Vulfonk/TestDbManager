@@ -10,15 +10,15 @@ namespace DataBase.DTO
         public int Id { get; set; }
 
         [Column("idchild")]
+        [ForeignKey("Child")]
         public int? ChildId { get; set; }
 
-        [ForeignKey("ChildId")]
         public Subject Child { get; set; }
 
         [Column("idparent")]
+        [ForeignKey("Parent")]
         public int? ParentId { get; set; }
 
-        [ForeignKey("ParentId")]
         public Subject Parent { get; set; }
 
         [Column("type")]

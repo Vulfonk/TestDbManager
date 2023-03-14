@@ -32,9 +32,9 @@
             this.buttonFillDb = new System.Windows.Forms.Button();
             this.buttonShowDb = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonClearDb = new System.Windows.Forms.Button();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonClearDb = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,16 +82,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(305, 435);
             this.dataGridView1.TabIndex = 3;
             // 
-            // buttonClearDb
-            // 
-            this.buttonClearDb.Location = new System.Drawing.Point(335, 70);
-            this.buttonClearDb.Name = "buttonClearDb";
-            this.buttonClearDb.Size = new System.Drawing.Size(75, 23);
-            this.buttonClearDb.TabIndex = 4;
-            this.buttonClearDb.Text = "Очистить";
-            this.buttonClearDb.UseVisualStyleBackColor = true;
-            this.buttonClearDb.Click += new System.EventHandler(this.buttonClearDb_Click);
-            // 
             // NameColumn
             // 
             this.NameColumn.HeaderText = "Название";
@@ -104,6 +94,16 @@
             this.ValueColumn.Name = "ValueColumn";
             this.ValueColumn.Width = 130;
             // 
+            // buttonClearDb
+            // 
+            this.buttonClearDb.Location = new System.Drawing.Point(335, 70);
+            this.buttonClearDb.Name = "buttonClearDb";
+            this.buttonClearDb.Size = new System.Drawing.Size(75, 23);
+            this.buttonClearDb.TabIndex = 4;
+            this.buttonClearDb.Text = "Очистить";
+            this.buttonClearDb.UseVisualStyleBackColor = true;
+            this.buttonClearDb.Click += new System.EventHandler(this.buttonClearDb_Click);
+            // 
             // buttonDelete
             // 
             this.buttonDelete.Location = new System.Drawing.Point(335, 99);
@@ -112,6 +112,7 @@
             this.buttonDelete.TabIndex = 5;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonAdd
             // 

@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using TestDbManager.Views;
 
 namespace TestDbManager
 {
@@ -101,7 +103,33 @@ namespace TestDbManager
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //treeView1.SelectedNode.Nodes.Add()
+            var dialog = new AddDialog();
+            var result = dialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                var parent = (this.treeView1.SelectedNode.Tag as Subject);
+                var child = dialog.Subject;
+                var type = dialog.LinkName;
+
+                var link = new Link()
+                {
+                    ParentId = parent.Id,
+                    ChildId = child.Id,
+                    Type = type,
+                };
+                
+                using (var db = new UserContext())
+                {
+                    db.Links.Add(link);
+                    db.SaveChanges();
+                    var node = GenerateTreeNode(child);
+                    treeView1.SelectedNode.Nodes.Add(node);
+                    treeView1.SelectedNode.Expand();
+                }
+            }
+
+            dialog.Dispose();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

@@ -7,11 +7,13 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Serialization;
 using TestDbManager.Views;
 
 namespace TestDbManager
@@ -156,5 +158,33 @@ namespace TestDbManager
         {
             new DataBaseService().DeleteObject(node.Tag as Subject);
         }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            var dlg = new SaveFileDialog();
+            dlg.Title = "Save XML Document";
+            dlg.Filter = "XML Files (*.xml)|*.xml";
+            if(dlg.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            using (var db = new UserContext())
+            {
+                var objs = db.Objects.ToList();
+                var links = db.Links.ToList();
+
+                var root = new SubjectsTreeFactory().GetTree(links, objs);
+
+                var serializer = new XmlSerializer(typeof(SubjectNode));
+
+                using (var writer = new StreamWriter(dlg.FileName))
+                {
+                    serializer.Serialize(writer, root);
+                }
+            }
+        }
     }
+
+
 }

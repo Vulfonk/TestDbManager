@@ -38,6 +38,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -138,6 +139,7 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.buttonExport);
             this.panel1.Controls.Add(this.buttonFillDb);
             this.panel1.Controls.Add(this.buttonAdd);
             this.panel1.Controls.Add(this.buttonShowDb);
@@ -147,6 +149,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(129, 337);
             this.panel1.TabIndex = 7;
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.Location = new System.Drawing.Point(27, 159);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(75, 23);
+            this.buttonExport.TabIndex = 7;
+            this.buttonExport.Text = "Экспорт";
+            this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // Form1
             // 
@@ -179,6 +191,7 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonExport;
     }
 }
 

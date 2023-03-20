@@ -62,6 +62,8 @@
     <Compile Include="DataBaseService.cs" />
     <Compile Include="DTO\Attribute.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="SubjectNode.cs" />
+    <Compile Include="SubjectsTreeFactory.cs" />
     <Compile Include="Views\AddDialog.cs">
       <SubType>Form</SubType>
     </Compile>

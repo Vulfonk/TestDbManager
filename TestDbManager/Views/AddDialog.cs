@@ -1,5 +1,5 @@
-﻿using DataBase;
-using DataBase.DTO;
+﻿using TestDbManager.DataBase;
+using TestDbManager.DataBase.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

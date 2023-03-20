@@ -1,8 +1,8 @@
-﻿using DataBase.DTO;
+﻿using TestDbManager.DataBase.DTO;
 using System.Collections.Generic;
 using System.Data.Entity;
 
-namespace DataBase
+namespace TestDbManager.DataBase
 {
     public class UserContext : DbContext
     {
@@ -12,6 +12,6 @@ namespace DataBase
 
         public DbSet<Attribute> Attributes => Set<Attribute>();
 
-        public UserContext() : base("DbConnection") { }
+        public UserContext() : base("DbCon") { }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DataBase.DTO
+namespace TestDbManager.DataBase.DTO
 {
     [Table("Links")]
     public class Link

@@ -41,6 +41,7 @@ namespace TestDbManager
 
         public static void FillTestData()
         {
+            ClearDataBase();
             var subjects = new List<Subject>()
             {
                 new Subject{ Id=103, Product="СЕ.1235.00.00.000", Type="Сборочная единица"},

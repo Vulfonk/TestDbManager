@@ -18,9 +18,9 @@ using TestDbManager.Views;
 
 namespace TestDbManager
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -170,6 +170,8 @@ namespace TestDbManager
                 return;
             }
 
+            this.Cursor = Cursors.WaitCursor;
+
             using (var db = new UserContext())
             {
                 var objs = db.Objects.ToList();
@@ -184,6 +186,9 @@ namespace TestDbManager
                     serializer.Serialize(writer, root);
                 }
             }
+
+            this.Cursor = Cursors.Default;
+
         }
     }
 
